@@ -3,28 +3,20 @@ import {
   View,
   StyleSheet,
   Text,
-  Image,
-  TouchableOpacity,
-  Alert,
 } from 'react-native';
 
-import ButtonIcon from '../../Buttons/ButtonIcon';
+import ButtonAdd from '../../Buttons/ButtonAdd';
 import Style from '../../../utils/Style';
 import iconAdd from '../../../images/add.png';
 
 const Header = props => {
 
-  const _onPress = () => {
-    Alert.alert('Add button clicked');
-  }
-
   return (
     <View style={styles.container}>
       <Text style={styles.text}>Color Palette Extractor</Text>
-      <ButtonIcon style={styles.buttonAdd}
+      <ButtonAdd style={styles.buttonAdd}
         source={iconAdd}
         activeOpacity={0.7}
-        onPress={_onPress}
         {...props}/>
     </View>
   );

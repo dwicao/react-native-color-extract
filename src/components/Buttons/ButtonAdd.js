@@ -4,11 +4,12 @@ import {
   Image,
   TouchableOpacity,
   Platform,
+  Alert,
 } from 'react-native';
 import ImagePicker from 'react-native-image-picker';
 
 
-const ButtonIcon = props => {
+const ButtonAdd = props => {
   const {
     items,
     actions,
@@ -20,7 +21,9 @@ const ButtonIcon = props => {
   let imageSource;
 
   const options = {
-    title: 'Select Image',
+    mediaType: 'photo',
+    maxWidth: 200,
+    maxHeight: 200,
     storageOptions: {
       skipBackup: true,
       path: 'images'
@@ -32,10 +35,11 @@ const ButtonIcon = props => {
       console.log('Response = ', response);
 
       if (response.didCancel) {
-        console.log('User cancelled image picker');
+        return;
       }
       else if (response.error) {
-        console.log('ImagePicker Error: ', response.error);
+      //  console.log('ImagePicker Error: ', response.error);
+        Alert.alert('ImagePicker Error\nPlease Try Again');
       }
       else {
         // You can display the image using either data...
@@ -68,10 +72,10 @@ const styles = StyleSheet.create({
   },
 });
 
-ButtonIcon.propTypes = {
+ButtonAdd.propTypes = {
   source: PropTypes.number.isRequired,
   style: PropTypes.number,
   activeOpacity: PropTypes.number,
 };
 
-export default ButtonIcon;
+export default ButtonAdd;

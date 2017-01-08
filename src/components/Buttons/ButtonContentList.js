@@ -4,18 +4,20 @@ import {
   Image,
   TouchableOpacity,
   View,
-  Text
+  Alert,
 } from 'react-native';
 
 import Style from '../../utils/Style';
 
 const ButtonContentList = props => {
   const {
+    items,
+    actions,
     source,
   } = props;
 
   const _onPress = () => {
-
+    Alert.alert('you clicked ButtonContentList');
   }
 
   return (
@@ -52,10 +54,12 @@ const styles = StyleSheet.create({
     width: mySize,
     height: mySize,
     backgroundColor: 'blue',
-  }
+  },
 });
 
 ButtonContentList.propTypes = {
+  items: PropTypes.array.isRequired,
+  actions: PropTypes.object.isRequired,
   source: PropTypes.object.isRequired,
 };
 

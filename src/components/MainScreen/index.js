@@ -2,7 +2,6 @@ import React, { Component, PropTypes } from 'react';
 import {
   View,
   StyleSheet,
-  StatusBar,
   Platform,
 } from 'react-native';
 

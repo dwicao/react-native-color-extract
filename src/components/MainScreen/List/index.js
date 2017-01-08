@@ -3,10 +3,6 @@ import {
   View,
   StyleSheet,
   ScrollView,
-  Image,
-  TouchableOpacity,
-  Alert,
-  Text,
 } from 'react-native';
 
 import Style from '../../../utils/Style';
@@ -19,20 +15,13 @@ const List = props => {
     actions,
   } = props;
 
-
-  const _onPress = () => {
-    Alert.alert('Add button clicked');
-  }
-
   const _renderList = (item, index) => {
     return (
       <View key={index} style={styles.row}>
-        <ButtonContentList source={item.uri} {...props} />
+        <ButtonContentList source={item.source} {...props} />
       </View>
     );
   }
-
-  const data = Array.from({length: 10});
 
   return (
     <View style={styles.container}>
